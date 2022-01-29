@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="p-grid">
+            <div class="p-col-12">
+                <button pButton icon="pi pi-bars" class="p-button-outlined" (click)="exibindoMenu = !exibindoMenu"></button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="navbar-menu" [hidden]="!exibindoMenu">
+        <li class="navbar-user">Wesley Guimarães</li>
+        <li class="navbar-menu-item"><a href="#">Lançamentos</a></li>
+        <li class="navbar-menu-item"><a href="#">Pessoas</a></li>
+        <li class="navbar-menu-item"><a href="#">Logout</a></li>
+    </ul>
+</nav>

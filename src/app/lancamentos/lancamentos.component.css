@@ -1,0 +1,37 @@
+#vencimento {
+    display: block;
+}
+
+.inputDate {
+    width: 110px;
+    margin-right: 10px;
+}
+
+.col-valor-header {
+    width: 120px;
+    background-color: transparent;
+}
+
+.col-valor-content {
+    text-align: right;
+}
+
+.col-data-header {
+    background-color: transparent;
+    width: 120px;
+}
+
+.col-data-content {
+    text-align: center;
+}
+
+.table-body-font {
+    font-size: 13px;
+    padding: 1px;
+}
+
+@media (min-width: 40em) {
+    #coluna-valor {
+        text-align: right;
+    }
+}

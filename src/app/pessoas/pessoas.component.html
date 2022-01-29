@@ -1,0 +1,78 @@
+<div class="container">
+    <!-- Pesquisa Pessoas -->
+    <div class="p-grid">
+        <div class="p-col-12">
+            <h1>Pessoas</h1>
+        </div>
+
+        <div class="p-col-12 p-fluid">
+            <label class="labelTOP">Nome</label>
+            <input type="text" pInputText>
+        </div>
+
+        <div class="p-col-12">
+            <button pButton type="submit" label="Pesquisar" class="p-button-outlined"></button>
+        </div>
+    </div>
+
+    <br>
+    <!-- Tabela Pessoas -->
+    <div class="p-grid">
+        <div class="p-col-12">
+            <p-table [value]="pessoas" [paginator]="true" [rows]="3" [responsive]="true" styleClass="p-datatable-striped">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Status</th>
+                        <th class="table-col-acoes">Ações</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-pessoa>
+                    <!-- <tr> -->
+                    <tr class="table-body-font">
+                        <td>
+                            <span class="p-column-title">Nome:</span> {{pessoa.nome}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Cidade:</span> {{pessoa.cidade}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Estado:</span> {{pessoa.estado}}
+                        </td>
+
+
+                        <td *ngIf="pessoa.status === 'ativo'">
+                            <span class="p-column-title">Status:</span>
+                            <a href="#" pTooltip="Inativar" tooltipPosition="top" (click)="alternaStatus(pessoa)">
+                                <p-tag severity="success" value="{{pessoa.status.toUpperCase()}} "></p-tag>
+                            </a>
+                        </td>
+
+
+                        <td *ngIf="pessoa.status==='inativo' ">
+                            <span class="p-column-title ">Status:</span>
+                            <a href="# " pTooltip="Ativar" tooltipPosition="top" (click)="alternaStatus(pessoa)">
+                                <p-tag severity="danger" value="{{pessoa.status.toUpperCase()}} "></p-tag>
+                            </a>
+                        </td>
+
+
+                        <td>
+                            <button pButton icon="pi pi-pencil " pTooltip="Editar " tooltipPosition="top" style="margin-right: 10px; font-size: 8px; padding: 1; "></button>
+                            <button pButton icon="pi pi-trash " pTooltip="Excluir " tooltipPosition="top" style="font-size: 8px; padding: 1; "></button>
+                        </td>
+                    </tr>
+
+                </ng-template>
+
+            </p-table>
+        </div>
+    </div>
+
+    <div class="p-col-12">
+        <button pButton type="submit" label="Nova Pessoa" class="p-button-outlined"></button>
+    </div>
+</div>
